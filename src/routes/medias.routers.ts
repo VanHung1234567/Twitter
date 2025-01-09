@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { uploadImageController, uploadVideoController } from '~/controllers/medias.controllers'
+import { uploadImageController, uploadVideoController } from '~/controllers/medias.controllers.js'
 import { accessTokenValidator, verfiedUserValidator } from '~/middlewares/users.middlewares'
 import { wrapRequestHandler } from '~/utils/handlers'
 

@@ -7,7 +7,7 @@ import { getNameFromFullname, handleUploadImage, handleUploadVideo } from '~/uti
 import { isProduction } from '~/constants/config'
 import { config } from 'dotenv'
 import { MediaType } from '~/constants/enums'
-import { Media } from '~/models/Orther'
+import { Media } from '~/models/Other'
 config()
 class MediasService {
   async uploadImage(req: Request) {
