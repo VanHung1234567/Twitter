@@ -37,11 +37,15 @@ export default function Chat() {
   useEffect(() => {
     socket.on('receive_message', (data) => {
       const { payload } = data
-      setConversations((conversations) => [...conversations, payload])
+      setConversations((conversations) => [payload, ...conversations])
     })
 
     socket.on('connect_error', (err) => {
       console.log(err.data)
+    })
+
+    socket.on('disconnect', (reason) => {
+      console.log(reason)
     })
 
     return () => {

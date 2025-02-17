@@ -5,13 +5,10 @@ import fs from 'fs'
 import fsPromise from 'fs/promises'
 import { UPLOAD_IMAGE_DIR } from '~/constants/dir'
 import { getNameFromFullname, handleUploadImage, handleUploadVideo } from '~/utils/file'
-import { isProduction } from '~/constants/config'
-import { config } from 'dotenv'
 import { MediaType } from '~/constants/enums'
 import { Media } from '~/models/Other'
 import { uploadFileToS3 } from '~/utils/s3'
 import { CompleteMultipartUploadCommandOutput } from '@aws-sdk/client-s3'
-config()
 class MediasService {
   async uploadImage(req: Request) {
     const mime = (await import('mime')).default
